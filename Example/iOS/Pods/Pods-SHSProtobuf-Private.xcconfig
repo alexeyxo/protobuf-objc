@@ -1,0 +1,6 @@
+#include "Pods-SHSProtoBuf.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/SHSProtoBuf" "${PODS_ROOT}/BuildHeaders/SHSProtoBuf/ProtocolBuffers" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/SHSPhoneComponent" "${PODS_ROOT}/Headers/SHSProtoBuf" "${PODS_ROOT}/Headers/SHSProtoBuf/ProtocolBuffers"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
+WARNING_CFLAGS = ${PODS_SHSPROTOBUF_WARNING_CFLAGS}

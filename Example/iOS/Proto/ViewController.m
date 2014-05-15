@@ -22,24 +22,14 @@
 {
     [super viewDidLoad];
     
-//    [self proto];
-//    [self json];
-    
-    PersonBuilder *builder = [[PersonBuilder alloc] init];
-    [builder setPhoneTypesArray:@[@(PersonPhoneTypeHome),@(PersonPhoneTypeMobile)]];
-    [builder setPersonIdArray:@[[NSNumber numberWithLongLong:12323412],[NSNumber numberWithLongLong:11111111111]]];
-    Person *pp = [builder build];
-    NSLog(@"%lld",[pp.personId int64AtIndex:1]);
-    
+    [self proto];
+    [self json];
 }
 
 
 -(void) proto
 {
     // Proto Part
-    
-    NSLog(@"%@ %lu %lu %lu %lu",(sizeof(long) == 8 ? @"USING 64 bit system" : @"USING 32 bit system"),sizeof(int32_t), sizeof(long), sizeof(long long), sizeof(int64_t));
-    
     NSData* raw_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://0.0.0.0:4567/1/getGroups"]];
     if (!raw_data)
     {
@@ -52,14 +42,14 @@
    
     [NSObject logTime:^{
         person = [Person parseFromData:raw_data];
-         NSLog(@"%ld",(long)person.personId);
+        NSLog(@"%ld",(long)person.personId);
     } withPrefix:@"builing proto objects"];
 }
 
 -(void) json
 {
     // JSON Part
-    NSData *raw_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://192.168.2.1:4567/1/getGroupsJson"]];
+    NSData *raw_data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://0.0.0.0:4567/1/getGroupsJson"]];
 
     if (!raw_data)
     {

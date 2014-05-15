@@ -37,22 +37,23 @@ BOOL PersonPhoneTypeIsValidValue(PersonPhoneType value);
 
 @interface Person : PBGeneratedMessage {
 @private
+  BOOL hasPersonId_:1;
   BOOL hasName_:1;
   BOOL hasEmail_:1;
+  long long personId;
   NSString* name;
   NSString* email;
-  PBAppendableArray * personIdArray;
   PBAppendableArray * phonesArray;
   PBAppendableArray * phoneTypesArray;
 }
 - (BOOL) hasName;
+- (BOOL) hasPersonId;
 - (BOOL) hasEmail;
 @property (readonly, strong) NSString* name;
-@property (readonly, strong) PBArray * personId;
+@property (readonly) long long personId;
 @property (readonly, strong) NSString* email;
 @property (readonly, strong) PBArray * phones;
 @property (readonly, strong) PBArray * phoneTypes;
-- (long long)personIdAtIndex:(NSUInteger)index;
 - (PersonPhoneNumber*)phonesAtIndex:(NSUInteger)index;
 - (PersonPhoneType)phoneTypesAtIndex:(NSUInteger)index;
 
@@ -154,12 +155,10 @@ BOOL PersonPhoneTypeIsValidValue(PersonPhoneType value);
 - (PersonBuilder*) setName:(NSString*) value;
 - (PersonBuilder*) clearName;
 
-- (PBAppendableArray *)personId;
-- (long long)personIdAtIndex:(NSUInteger)index;
-- (PersonBuilder *)addPersonId:(long long)value;
-- (PersonBuilder *)setPersonIdArray:(NSArray *)array;
-- (PersonBuilder *)setPersonIdValues:(const long long *)values count:(NSUInteger)count;
-- (PersonBuilder *)clearPersonId;
+- (BOOL) hasPersonId;
+- (long long) personId;
+- (PersonBuilder*) setPersonId:(long long) value;
+- (PersonBuilder*) clearPersonId;
 
 - (BOOL) hasEmail;
 - (NSString*) email;

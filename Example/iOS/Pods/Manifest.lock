@@ -1,0 +1,19 @@
+PODS:
+  - SHSPhoneComponent (2.11)
+  - SHSProtoBuf (0.9):
+    - SHSProtoBuf/non-arc
+  - SHSProtoBuf/non-arc (0.9)
+
+DEPENDENCIES:
+  - SHSPhoneComponent
+  - SHSProtoBuf (from `../..`)
+
+EXTERNAL SOURCES:
+  SHSProtoBuf:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  SHSPhoneComponent: 1fccf8b5068e6c9ca2dff5b67949fd728e545734
+  SHSProtoBuf: b1e9a71bcd17242421669bdc94e787237ce69831
+
+COCOAPODS: 0.32.1
