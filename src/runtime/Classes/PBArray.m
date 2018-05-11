@@ -353,31 +353,31 @@ static PBArrayValueTypeInfo PBValueTypes[] =
         BOOL result = [predicate evaluateWithObject:obj];
         if (result)
         {
-            if (PBArrayValueTypeBool == _valueType)
+            if (PBArrayValueTypeBool == self->_valueType)
             {
                 [newArray addBool:[(NSNumber *)obj boolValue]];
             }
-            else if (PBArrayValueTypeInt32 == _valueType)
+            else if (PBArrayValueTypeInt32 == self->_valueType)
             {
                 [newArray addInt32:(SInt32)[(NSNumber *)obj longValue]];
             }
-            else if (PBArrayValueTypeInt64 == _valueType)
+            else if (PBArrayValueTypeInt64 == self->_valueType)
             {
                 [newArray addInt64:[(NSNumber *)obj longLongValue]];
             }
-            else if (PBArrayValueTypeUInt32 == _valueType)
+            else if (PBArrayValueTypeUInt32 == self->_valueType)
             {
                  [newArray addUint32:(UInt32)[(NSNumber *)obj unsignedLongValue]];
             }
-            else if (PBArrayValueTypeUInt64 == _valueType)
+            else if (PBArrayValueTypeUInt64 == self->_valueType)
             {
                 [newArray addUint64:[(NSNumber *)obj unsignedLongLongValue]];
             }
-            else if (_valueType == PBArrayValueTypeFloat)
+            else if (self->_valueType == PBArrayValueTypeFloat)
             {
                  [newArray addFloat:[(NSNumber *)obj floatValue]];
             }
-            else if (_valueType == PBArrayValueTypeDouble)
+            else if (self->_valueType == PBArrayValueTypeDouble)
             {
                  [newArray addDouble:[(NSNumber *)obj doubleValue]];
             }
